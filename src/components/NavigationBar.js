@@ -4,47 +4,73 @@ import {
   Container,
   Nav,
   Button,
-  Form
+  Form,
+  Offcanvas,
+  CloseButton
 } from "react-bootstrap";
 import ChangingIcon from "./ChangingIcon";
-import BootstrapSwitchButton from 'bootstrap-switch-button-react'
-import { FaBars } from 'react-icons/fa';
 
-export default function NavigationBar({theme, switchTheme}) {
+export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<Navbar collapseOnSelect expand="xl" bg={theme === "dark" ? "dark" : 'primary'} variant={theme === "dark" ? "dark" : 'light'} fixed="top">
+<Navbar collapseOnSelect expand="xl" bg={theme === "dark" ? "dark" : 'light'} variant={theme === "dark" ? "dark" : 'light'} sticky="top" expand={false}>
   <Container fluid>
   <Navbar.Brand href="#home"><ChangingIcon width={32}/></Navbar.Brand>
-    <div className={`justify-content-around d-flex align-items-center text-light`}>
-    {/* {<BootstrapSwitchButton
-        size="xs"
-        onstyle="light"
-        offstyle="outline-primary"
-        width={100}
-            checked={theme === "dark"}
-            onlabel='Dark'
-            offlabel='Light'
-            onChange={(checked) => {
-              switchTheme()
-            }}
-        />} */}
-       
-        <Nav.Link className={"text-light"} href="#action1">About</Nav.Link>
-        <Nav.Link className={"text-light"} href="#action2">Experience</Nav.Link>
-        <Nav.Link className={"text-light"} href="#action3">Projects</Nav.Link>
-        <Nav.Link className={"text-light"}href="#action4">Contact</Nav.Link>
-        <Button className="w-25 mx-auto" className={theme == "dark" ? "bg-primary" : "bg-dark"}>Resume</Button>
+    <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
+      
+        <Nav.Link className={styles.smallLinkStyle} href="#about">About</Nav.Link>
+        <Nav.Link className={styles.smallLinkStyle} href="#experience">Experience</Nav.Link>
+        <Nav.Link className={styles.smallLinkStyle} href="#projects">Projects</Nav.Link>
+        <Nav.Link className={styles.smallLinkStyle} href="#contact">Contact</Nav.Link>
+        <Button className="w-25 mx-auto">Resume</Button>
         <Form.Check 
         type="switch"
         className="mx-3"
-        style={{width: 70}}
+        style={{width: 70, marginTop: 6}}
         checked={theme === "dark"}
           id="custom-switch"
           onChange={switchTheme}
           label={theme === "dark" ? "Dark": "Light"}
         />
+        
     </div>
+    <div className="d-sm-inline d-md-none ">
+    <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={() => setShowNavList(true)}/>
+    </div>
+    <Navbar.Offcanvas
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+      placement="end"
+      className={styles.bgColor}
+      show={showNavList}
+    onHide={() => setShowNavList(false)}
+    >
+      <Offcanvas.Header>
+        <Form.Check 
+            type="switch"
+            className="mx-3"
+            className={styles.medLinkStyle}
+            style={{width: 70, marginTop: 6}}
+            checked={theme === "dark"}
+              id="custom-switch"
+              onChange={switchTheme}
+              label={theme === "dark" ? "Dark": "Light"}
+          /> 
+          <CloseButton variant={theme === "dark" ? "white" : 'dark'} onClick={() => setShowNavList(false)}/>
+        </Offcanvas.Header>
+      <Offcanvas.Body>
+        <Nav className="justify-content-center d-flex align-items-center">
+          
+          <Nav.Link className={styles.medLinkStyle} href="#about">About</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} href="#projects">Projects</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
+          <Button className="w-50 med-text">Resume</Button>
+          
+        </Nav>
+        
+      </Offcanvas.Body>
+    </Navbar.Offcanvas>
   </Container>
 </Navbar>
 
