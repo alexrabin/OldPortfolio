@@ -11,7 +11,6 @@ import Divider from './components/Divider';
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-  const [visible, setVisibility] = useState(false)
   const styles = useMemo(() => {
     const isDark = theme === "dark";
     return {
@@ -21,7 +20,7 @@ function App() {
       accentColor: isDark ? '#49525B' : '#E5E6E7',
       smallLinkStyle: ` small-text ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
       medLinkStyle: `med-text mono-font ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
-      particleBgColor: isDark ? '#212529' : '#e9ecef'
+      particleBgColor: isDark ? '#212529' : '#F4F7FA'
 
 
     }
@@ -35,13 +34,10 @@ function App() {
 
   },[theme, setTheme])
 
-  useEffect(() => {
-    setVisibility(true);
-  },[setVisibility]);
 
   return (
     
-    <div className={`vh-100 ${visible?'fadeIn':'fadeOut'}`} style={{transition: "all .5s ease",
+    <div className={`vh-100`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
       <Particles
@@ -52,7 +48,7 @@ function App() {
               value: styles.particleBgColor,
             },
           },
-          fpsLimit: 30,
+          fpsLimit: 40,
           fullScreen: {enabled: true},
           interactivity: {
             detectsOn: "canvas",
