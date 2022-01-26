@@ -16,7 +16,7 @@ import { FaBars } from 'react-icons/fa';
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<Navbar className="transparent" collapseOnSelect expand="xl"  sticky="top" expand={false}>
+<Navbar className="transparent" collapseOnSelect expand="xl"  sticky="top" >
   <Container fluid>
   <Navbar.Brand href="#home"><ChangingIcon width={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
@@ -60,8 +60,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
       <div className="switch-container">
         <Form.Check 
             type="switch"
-            className="mx-3"
-            className={styles.medLinkStyle}
+            className={[styles.medLinkStyle, "mx-3"]}
             style={{width: 70, marginTop: 6}}
             checked={theme === "dark"}
               id="custom-switch"

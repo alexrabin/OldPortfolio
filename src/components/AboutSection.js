@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 
 export default function AboutSection({theme, styles}) {
   return <div className='mx-auto' style={{width:"95%", marginTop:100}}>
