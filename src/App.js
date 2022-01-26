@@ -4,6 +4,8 @@ import {useCallback, useEffect, useMemo, useState} from 'react'
 import { Container } from 'react-bootstrap';
 import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
+import Particles from "react-tsparticles";
+
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
@@ -12,10 +14,13 @@ function App() {
     const isDark = theme === "dark";
     return {
       textColor: isDark ? 'text-light' : 'text-dark',
+      accentTextColor: isDark ? '#DCDDDE' : '#49525C',
       bgColor: isDark ? 'bg-dark' : 'bg-light',
       accentColor: isDark ? '#49525B' : '#E5E6E7',
       smallLinkStyle: ` small-text ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
-      medLinkStyle: `med-text mono-font ${isDark ? 'dark-nav-link' : 'light-nav-link'}`
+      medLinkStyle: `med-text mono-font ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
+      particleBgColor: isDark ? 'black' : 'var(--primary-bg)'
+
 
     }
   }, [theme]);
@@ -33,10 +38,91 @@ function App() {
   },[setVisibility]);
 
   return (
-
+    
     <div className={`vh-100 ${styles.bgColor} ${visible?'fadeIn':'fadeOut'}`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
+    <Particles
+        id="tsparticles"
+        options={{
+          background: {
+            color: {
+              value: styles.particleBgColor,
+            },
+          },
+          fpsLimit: 60,
+          interactivity: {
+            detectsOn: "canvas",
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 400,
+                duration: 2,
+                opacity: 0.6,
+                size: 40,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: styles.accentTextColor,
+            },
+            links: {
+              color: styles.accentTextColor,
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 1,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.3,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 5,
+            },
+          },
+          detectRetina: true,
+        }}
+      />
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container>
         <AboutSection theme={theme} styles={styles}/>
