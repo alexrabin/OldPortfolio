@@ -5,6 +5,8 @@ import { Container } from 'react-bootstrap';
 import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
 import Particles from "react-tsparticles";
+import HeaderSection from './components/HeaderSection';
+import Divider from './components/Divider';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -123,7 +125,9 @@ function App() {
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container style={{zIndex: 1020}} onClick={() => console.log('clicked')}>
-        <AboutSection theme={theme} styles={styles}/>
+        <HeaderSection theme={theme} styles={styles}/>
+        <Divider styles={styles}/>
+        <AboutSection styles={styles}/>
       </Container>
       </div>
     </div>
