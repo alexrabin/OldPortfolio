@@ -1,6 +1,6 @@
 import './App.css';
 import useLocalStorage from 'use-local-storage'
-import {useCallback, useEffect, useMemo, useState} from 'react'
+import {useCallback, useMemo} from 'react'
 import { Container } from 'react-bootstrap';
 import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
