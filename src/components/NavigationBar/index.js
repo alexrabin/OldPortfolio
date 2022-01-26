@@ -8,12 +8,14 @@ import {
   Offcanvas,
   CloseButton
 } from "react-bootstrap";
-import ChangingIcon from "./ChangingIcon";
+import ChangingIcon from "../ChangingIcon";
+import './styles.css';
+
 
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<Navbar collapseOnSelect expand="xl" bg={theme === "dark" ? "dark" : 'light'} variant={theme === "dark" ? "dark" : 'light'} sticky="top" expand={false}>
+<Navbar className="transparent" collapseOnSelect expand="xl"  sticky="top" expand={false}>
   <Container fluid>
   <Navbar.Brand href="#home"><ChangingIcon width={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
@@ -26,7 +28,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
         <Form.Check 
         type="switch"
         className="mx-3"
-        style={{width: 70, marginTop: 6}}
+        style={{width: 100, marginTop: 6}}
         checked={theme === "dark"}
           id="custom-switch"
           onChange={switchTheme}
@@ -38,6 +40,9 @@ export default function NavigationBar({theme, switchTheme, styles}) {
     <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={() => setShowNavList(true)}/>
     </div>
     <Navbar.Offcanvas
+    style={{transition: "all .5s ease",
+    WebkitTransition: "all .5s ease",
+    MozTransition: "all .5s ease"}}
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
       placement="end"
