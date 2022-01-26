@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import ChangingIcon from "../ChangingIcon";
 import './styles.css';
+import { FaBars } from 'react-icons/fa';
 
 
 export default function NavigationBar({theme, switchTheme, styles}) {
@@ -24,20 +25,25 @@ export default function NavigationBar({theme, switchTheme, styles}) {
         <Nav.Link className={styles.smallLinkStyle} href="#experience">Experience</Nav.Link>
         <Nav.Link className={styles.smallLinkStyle} href="#projects">Projects</Nav.Link>
         <Nav.Link className={styles.smallLinkStyle} href="#contact">Contact</Nav.Link>
-        <Button className="w-25 mx-auto">Resume</Button>
-        <Form.Check 
+        <Button className="w-25 mx-auto resume-button">Resume</Button>
+       <div className="switch-container">
+       <Form.Check 
         type="switch"
-        className="mx-3"
-        style={{width: 100, marginTop: 6}}
+        className={`mx-3 ${theme === "dark" ? "dark-nav-link": "light-nav-link"}`}
+        style={{width: 100, marginTop: 7}}
         checked={theme === "dark"}
           id="custom-switch"
           onChange={switchTheme}
           label={theme === "dark" ? "Dark": "Light"}
         />
+       </div>
         
     </div>
     <div className="d-sm-inline d-md-none ">
-    <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={() => setShowNavList(true)}/>
+    <Navbar.Toggle className={`${theme === "dark" ? "text-white": "text-dark"}`} aria-controls="offcanvasNavbar" onClick={() => setShowNavList(true)}>
+    <FaBars/>
+
+        </Navbar.Toggle>
     </div>
     <Navbar.Offcanvas
     style={{transition: "all .5s ease",
@@ -51,6 +57,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
     onHide={() => setShowNavList(false)}
     >
       <Offcanvas.Header>
+      <div className="switch-container">
         <Form.Check 
             type="switch"
             className="mx-3"
@@ -61,6 +68,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
               onChange={switchTheme}
               label={theme === "dark" ? "Dark": "Light"}
           /> 
+        </div>
           <CloseButton variant={theme === "dark" ? "white" : 'dark'} onClick={() => setShowNavList(false)}/>
         </Offcanvas.Header>
       <Offcanvas.Body>
@@ -70,7 +78,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
           <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#projects">Projects</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
-          <Button className="w-50 med-text">Resume</Button>
+          <Button className="w-50 med-text resume-button">Resume</Button>
           
         </Nav>
         

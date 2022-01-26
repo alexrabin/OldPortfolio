@@ -14,8 +14,8 @@ function App() {
       textColor: isDark ? 'text-light' : 'text-dark',
       bgColor: isDark ? 'bg-dark' : 'bg-light',
       accentColor: isDark ? '#49525B' : '#E5E6E7',
-      smallLinkStyle: `small-text mono-font ${isDark ? 'text-light' : 'text-primary'}`,
-      medLinkStyle: `med-text mono-font ${isDark ? 'text-light' : 'text-primary'}`
+      smallLinkStyle: ` small-text ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
+      medLinkStyle: `med-text mono-font ${isDark ? 'dark-nav-link' : 'light-nav-link'}`
 
     }
   }, [theme]);

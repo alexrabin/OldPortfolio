@@ -27,3 +27,17 @@ body{
 .med-text{
   font-size: 1.3rem;
 }
+.light-nav-link{
+  color: #296EFD;
+  font-family: 'Source Code Pro', monospace;
+}
+.light-nav-link:hover{
+  color: #EC4578
+}
+.dark-nav-link{
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+}
+.dark-nav-link:hover{
+  color: #EC4578
+}
