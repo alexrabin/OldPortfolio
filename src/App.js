@@ -52,7 +52,7 @@ function App() {
               value: styles.particleBgColor,
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 30,
           fullScreen: {enabled: true},
           interactivity: {
             detectsOn: "canvas",
