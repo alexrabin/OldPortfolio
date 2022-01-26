@@ -69,7 +69,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
               label={theme === "dark" ? "Dark": "Light"}
           /> 
         </div>
-          <CloseButton variant={theme === "dark" ? "white" : 'dark'} onClick={() => setShowNavList(false)}/>
+          <CloseButton variant={theme === "dark" ? "white" : null} onClick={() => setShowNavList(false)}/>
         </Offcanvas.Header>
       <Offcanvas.Body>
         <Nav className="justify-content-center d-flex align-items-center">

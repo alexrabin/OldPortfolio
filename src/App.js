@@ -19,7 +19,7 @@ function App() {
       accentColor: isDark ? '#49525B' : '#E5E6E7',
       smallLinkStyle: ` small-text ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
       medLinkStyle: `med-text mono-font ${isDark ? 'dark-nav-link' : 'light-nav-link'}`,
-      particleBgColor: isDark ? 'black' : 'var(--primary-bg)'
+      particleBgColor: isDark ? '#212529' : '#e9ecef'
 
 
     }
@@ -39,10 +39,10 @@ function App() {
 
   return (
     
-    <div className={`vh-100 ${styles.bgColor} ${visible?'fadeIn':'fadeOut'}`} style={{transition: "all .5s ease",
+    <div className={`vh-100 ${visible?'fadeIn':'fadeOut'}`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
-    <Particles
+      <Particles
         id="tsparticles"
         options={{
           background: {
@@ -51,13 +51,10 @@ function App() {
             },
           },
           fpsLimit: 60,
+          fullScreen: {enabled: true},
           interactivity: {
             detectsOn: "canvas",
             events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
               onHover: {
                 enable: true,
                 mode: "repulse",
@@ -110,7 +107,7 @@ function App() {
               value: 80,
             },
             opacity: {
-              value: 0.3,
+              value: 0.6,
             },
             shape: {
               type: "circle",
@@ -123,10 +120,12 @@ function App() {
           detectRetina: true,
         }}
       />
+       <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
-      <Container>
+      <Container style={{zIndex: 1020}} onClick={() => console.log('clicked')}>
         <AboutSection theme={theme} styles={styles}/>
       </Container>
+      </div>
     </div>
   );
 }
