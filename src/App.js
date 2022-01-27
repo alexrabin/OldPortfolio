@@ -6,7 +6,6 @@ import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
 import Particles from "react-tsparticles";
 import HeaderSection from './components/HeaderSection';
-import Divider from './components/Divider';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -48,7 +47,7 @@ function App() {
               value: styles.particleBgColor,
             },
           },
-          fpsLimit: 40,
+          fpsLimit: 60,
           fullScreen: {enabled: true},
           interactivity: {
             detectsOn: "canvas",
@@ -77,7 +76,7 @@ function App() {
           },
           particles: {
             color: {
-              value: styles.accentTextColor,
+              value: styles.accentColor,
             },
             links: {
               color: styles.accentTextColor,
@@ -100,7 +99,7 @@ function App() {
             number: {
               density: {
                 enable: true,
-                value_area: 800,
+                value_area: 900,
               },
               value: 80,
             },
@@ -112,7 +111,7 @@ function App() {
             },
             size: {
               random: true,
-              value: 5,
+              value: 2,
             },
           },
           detectRetina: true,
@@ -122,7 +121,6 @@ function App() {
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container style={{zIndex: 1020}} onClick={() => console.log('clicked')}>
         <HeaderSection theme={theme} styles={styles}/>
-        <Divider styles={styles}/>
         <AboutSection styles={styles}/>
       </Container>
       </div>
