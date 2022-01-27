@@ -1,6 +1,7 @@
 import React from 'react';
 import Divider from '../Divider';
 import { Tabs, Tab, Nav, Row, Col } from 'react-bootstrap';
+import './styles.css';
 
 export default function AboutSection({theme, styles}) {
   return <div className='mx-auto' style={{width:"95%", marginTop:50}}>
@@ -32,13 +33,13 @@ export default function AboutSection({theme, styles}) {
     <Col sm={3} className='mb-3'>
       <Nav variant="pills" className="flex-column text-center">
         <Nav.Item>
-          <Nav.Link eventKey="mobile">Mobile</Nav.Link>
+          <Nav.Link eventKey="mobile" className={theme === 'dark' ? 'dark' : 'light'}>Mobile</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="web">Web</Nav.Link>
+          <Nav.Link eventKey="web" className={theme === 'dark' ? 'dark' : 'light'}>Web</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="other">Other</Nav.Link>
+          <Nav.Link eventKey="other" className={theme === 'dark' ? 'dark' : 'light'}>Other</Nav.Link>
         </Nav.Item>
       </Nav>
     </Col>

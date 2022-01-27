@@ -47,7 +47,7 @@ function App() {
               value: styles.particleBgColor,
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 30,
           fullScreen: {enabled: true},
           interactivity: {
             detectsOn: "canvas",
@@ -119,9 +119,9 @@ function App() {
       />
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
-      <Container style={{zIndex: 1020}} onClick={() => console.log('clicked')}>
+      <Container style={{zIndex: 1020}}>
         <HeaderSection theme={theme} styles={styles}/>
-        <AboutSection styles={styles}/>
+        <AboutSection theme={theme} styles={styles}/>
       </Container>
       </div>
     </div>
