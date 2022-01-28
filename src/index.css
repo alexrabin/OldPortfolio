@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;700&display=swap');
+html {
+  scroll-behavior: smooth;
+}
 
 body{
   font-family: 'Expletus Sans', cursive;

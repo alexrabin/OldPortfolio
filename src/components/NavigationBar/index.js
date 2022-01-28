@@ -8,17 +8,16 @@ import {
   Offcanvas,
   CloseButton
 } from "react-bootstrap";
-import ChangingIcon from "../ChangingIcon";
 import './styles.css';
 import { FaBars } from 'react-icons/fa';
-
+import logo from '../../assets/largeicon.png'
 
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<Navbar className="transparent" collapseOnSelect expand="xl"  sticky="top" >
+<Navbar className={theme == 'dark' ? 'dark' : 'light'}  collapseOnSelect expand="xl"  sticky="top" >
   <Container fluid>
-  <Navbar.Brand href="#home"><ChangingIcon width={32}/></Navbar.Brand>
+  <Navbar.Brand href="#home"><img src={logo} height={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
       
         <Nav.Link className={styles.smallLinkStyle} href="#about">About</Nav.Link>

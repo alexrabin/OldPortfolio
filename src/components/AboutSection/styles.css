@@ -6,6 +6,7 @@
 }
 .nav-item .nav-link.dark.active:hover{
     color: #ffffff !important;
+    background-color: var(--bs-pink) !important;
 }
 .nav-item .nav-link.light{
     color: #49525C !important;
@@ -18,4 +19,9 @@
 }
 .nav-item .nav-link.light.active:hover{
     color: #ffffff !important;
+    background-color: var(--bs-pink) !important;
+
+}
+.nav-item .nav-link{
+    cursor: pointer;
 }

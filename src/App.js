@@ -6,6 +6,7 @@ import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
 import Particles from "react-tsparticles";
 import HeaderSection from './components/HeaderSection';
+import ParticlesBg from 'particles-bg'
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -39,7 +40,17 @@ function App() {
     <div className={`vh-100`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
-      <Particles
+    <ParticlesBg id="tsparticles" type="cobweb" color={[styles.accentTextColor]} bg={{
+        position: 'absolute',
+        width:' 100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: -1,
+        opacity: 0.8,
+        backgroundColor: styles.particleBgColor,
+        
+      }} />
+      {/* <Particles
         id="tsparticles"
         options={{
           background: {
@@ -116,7 +127,7 @@ function App() {
           },
           detectRetina: true,
         }}
-      />
+      /> */}
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container style={{zIndex: 1020}}>

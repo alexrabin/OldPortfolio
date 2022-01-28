@@ -1,10 +1,10 @@
 import React from 'react';
 import Divider from '../Divider';
-import { Tabs, Tab, Nav, Row, Col } from 'react-bootstrap';
+import { Tab, Nav, Row, Col } from 'react-bootstrap';
 import './styles.css';
 
 export default function AboutSection({theme, styles}) {
-  return <div className='mx-auto' style={{width:"95%", marginTop:50}}>
+  return <div id='about' className='mx-auto' style={{width:"95%", marginTop:50}}>
     <div className="row justify-content-start align-items-center">
       <div className="col-sm-6 col-md-4">
         <h1 className={`${styles.textColor}`}>About Me</h1>
@@ -46,27 +46,63 @@ export default function AboutSection({theme, styles}) {
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="mobile" className={`${styles.textColor}`}>
-            <li>Swift</li>
-            <li>Objective-C</li>
-            <li>Java</li>
-            <li>Flutter/Dart</li>
-            <li>React Native</li>
+
+            <Row className='justify-content-center'>
+                <Col className='justify-content-center d-flex'>
+                    <div>
+                        <li>Swift</li>
+                        <li>Objective-C</li>
+                        <li>Java</li>
+                    </div>
+                </Col>
+                <Col className='justify-content-center d-flex'>
+                    <div>
+                    <li>Flutter/Dart</li>
+                     <li>React Native</li>
+                    </div>
+                </Col>
+            </Row>
+            
         </Tab.Pane>
         <Tab.Pane eventKey="web" className={`${styles.textColor}`}>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>jQuery</li>
+            <Row className='justify-content-center'>
+            <Col className='justify-content-center d-flex'>
+                <div>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>jQuery</li>
+                </div>
+            </Col>
+           
+            <Col className='justify-content-center d-flex'>
+                <div>
             <li>React</li>
             <li>Angular</li>
             <li>Bootstrap</li>
+            </div>
+            </Col>
+            </Row>
         </Tab.Pane>
         <Tab.Pane eventKey="other" className={`${styles.textColor}`}>
-            <li>Python</li>
+           
+            
+            <Row className='justify-content-center'>
+            <Col className='justify-content-center d-flex'>
+                <div>
+                <li>Python</li>
             <li>Node.js</li>
             <li>Express</li>
-            <li>Firebase</li>
+                </div>
+            </Col>
+           
+            <Col className='justify-content-center d-flex'>
+                <div>
+                <li>Firebase</li>
             <li>MongoDB</li>
             <li>MySQL</li>
+            </div>
+            </Col>
+            </Row>
         </Tab.Pane>
       </Tab.Content>
     </Col>
