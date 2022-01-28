@@ -18,6 +18,6 @@ export default function Project(props) {
             {props.children}
         </Col>
     </Row>
-    <Divider styles={styles}/>
+    <Divider styles={styles} height={"1px"}/>
  </div>;
 }
