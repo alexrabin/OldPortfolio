@@ -5,7 +5,7 @@ import Divider from '../../Divider';
 export default function Project(props) {
     const {title,imageLink, projectLink, codeLink, styles, left, imageIcon} = props;
   return <div>
-    <Row className={`flex-md-row-${!left && 'reverse'}`}>
+    <Row className={`flex-row-${!left && 'reverse'}`}>
         <Col className='col-auto mb-3'>
             <a href={projectLink || codeLink} target="_blank">{imageLink ? <img height={100} alt={title} src={imageLink}/>: imageIcon}</a>
         </Col>

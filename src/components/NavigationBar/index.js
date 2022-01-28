@@ -13,11 +13,19 @@ import {
 import './styles.css';
 import { FaBars } from 'react-icons/fa';
 import logo from '../../assets/largeicon.png'
-import { Link} from "react-scroll";
+import Scroll, { Link,} from "react-scroll";
 import resumePdf from '../../assets/Alexander Rabin- Resume.pdf';
 //${theme == 'dark' ? 'dark' : 'light'}
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
+
+  const scrollToElement = (id) => {
+    setShowNavList(false)
+    Scroll.scroller.scrollTo(id, {
+      duration: 500,
+      offset: -70
+    })
+  }
   return <>
 <div className={`navbar navbar-expanded-xl navbar-inner ${theme === 'dark' ? 'darked' : 'lighted'} sticky-top`}>
   <Container fluid>
@@ -116,10 +124,10 @@ export default function NavigationBar({theme, switchTheme, styles}) {
       <Offcanvas.Body>
         <Col className="justify-content-center align-items-center text-center">
           
-          <Nav.Link className={styles.medLinkStyle} href="#about">About</Nav.Link>
-          <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
-          <Nav.Link className={styles.medLinkStyle} href="#projects">Projects</Nav.Link>
-          <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} onClick={() => scrollToElement('about')}>About</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle}  onClick={() => scrollToElement('experience')} >Experience</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} onClick={() => scrollToElement('projects')}>Projects</Nav.Link>
+          <Nav.Link className={styles.medLinkStyle} onClick={() => scrollToElement('contact')}>Contact</Nav.Link>
           <Button className="w-50 med-text regular-button" download="AlexanderRabin-Resume" target="_blank" href={resumePdf}>Resume</Button>
           
         </Col>
