@@ -23,6 +23,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
     setShowNavList(false)
     Scroll.scroller.scrollTo(id, {
       duration: 500,
+      smooth: true,
       offset: -70
     })
   }
