@@ -37,7 +37,7 @@ export default function ExperienceSection({theme, styles}) {
         <Tab.Pane eventKey="harkins" className={`${styles.textColor}`}>
 
             <WorkSection title={'React Developer'} work={"Harkins Theatres"} workLink={"https://www.harkins.com"} dates={"December 2021 - Present"}>
-              <li>Write modern, beautiful, amd maintainable for several internal projects</li>
+              <li>Write modern, beautiful, and maintainable code for several internal projects</li>
               <li>Work with a variety of different languages, platforms, and frameworks such as JavaScript, TypeScript, React, React Native, Bootstrap, and Chakra UI </li>
               <li>Communicate with a team of developers, business system analysts, and project managers on a daily basis</li>
             </WorkSection>
