@@ -38,7 +38,7 @@ function App() {
 
   },[theme, setTheme])
 
-  const [height, setHeight] = useState(window.document.body.scrollHeight);
+  const [height, setHeight] = useState("100%");
   
   useEffect(() => {
     const handleResize = (e) => {
