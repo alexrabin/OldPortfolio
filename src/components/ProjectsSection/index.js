@@ -17,7 +17,7 @@ export default function ProjectsSection({theme, styles}) {
     </div>
     <div id='the-projects'>
         <Project left styles={styles} title={"native_drag_n_drop"} codeLink={"https://github.com/alexrabin/FlutterNativeDragAndDrop"} projectLink="https://pub.dev/packages/native_drag_n_drop" imageLink="https://user-images.githubusercontent.com/15949910/150895221-6a4e58f8-4238-43e6-8549-4e626389985b.png">
-            <p style={{color: styles.accentTextColor}}>A package that allows developers to add native drag and drop support into their flutter app.</p>
+            <p style={{color: styles.accentTextColor}}>A package that allows developers to add native drag and drop support into their Flutter app.</p>
 
         </Project>
         <Project left={false} styles={styles} title={"Dragazon"} codeLink={"https://github.com/alexrabin/dragazon/tree/testing"} projectLink="https://dragazon.herokuapp.com" imageLink={dragazon} >

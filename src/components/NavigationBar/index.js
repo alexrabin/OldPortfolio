@@ -21,7 +21,18 @@ export default function NavigationBar({theme, switchTheme, styles}) {
   return <>
 <div className={`navbar navbar-expanded-xl navbar-inner ${theme === 'dark' ? 'darked' : 'lighted'} sticky-top`}>
   <Container fluid>
-  <Navbar.Brand href="#home"><img alt="Alex Rabin Logo" src={logo} height={32}/></Navbar.Brand>
+  <Navbar.Brand>
+    <Link
+        activeClass="active"
+        className={`px-2 ${styles.smallLinkStyle}`}
+        to="home"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        >    <img alt="Alex Rabin Logo" src={logo} height={32}/>
+        </Link>
+    </Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
       
         <Link
@@ -109,7 +120,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
           <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#projects">Projects</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
-          <Button className="w-50 med-text regular-button">Resume</Button>
+          <Button className="w-50 med-text regular-button" download="AlexanderRabin-Resume" target="_blank" href={resumePdf}>Resume</Button>
           
         </Col>
         

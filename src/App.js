@@ -10,6 +10,8 @@ import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 
+const currentYear =  new Date().getFullYear();
+
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
@@ -59,7 +61,7 @@ function App() {
     <div className={`vh-100`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
-    <ParticlesBg id="tsparticles" type="cobweb" color={'#EC4578'} bg={{
+    <ParticlesBg id="tsparticles" className="blurred" type="cobweb" color={'#EC4578'} bg={{
         position: 'absolute',
         width:' 100%',
         height: height,
@@ -69,8 +71,6 @@ function App() {
         top: 0,
         left: 0,
         backgroundColor: styles.particleBgColor,
-        filter: 'blur(2px)',
-        transform: 'scale(1.01)' 
       }} />
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
@@ -80,6 +80,9 @@ function App() {
           <ExperienceSection theme={theme} styles={styles}/>
           <ProjectsSection theme={theme} styles={styles}/>
           <ContactSection styles={styles}/>
+          <footer className={`text-center mt-5`} style={{color: styles.accentTextColor}}>
+          Alexander Rabin © {currentYear}
+          </footer>
       </Container>
       </div>
     </div>

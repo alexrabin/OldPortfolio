@@ -10,7 +10,11 @@ export default function Project(props) {
             <a href={projectLink || codeLink} target="_blank">{imageLink ? <img height={100} alt={title} src={imageLink}/>: imageIcon}</a>
         </Col>
         <Col className={``}>
-            <a className={`ext-link`} href={codeLink || projectLink} target="_blank"><h4 className={`${styles.textColor} ${!left && 'text-end'} fw-bold`}>{title}{codeLink && <a className={`ext-link`}><FaGithub style={{color: styles.accentTextColor}} className="mx-2 "size={25}/></a>}</h4></a>      
+            <div className={`d-flex ${left ? 'justify-content-start' : 'justify-content-end'}`}>
+            <a className={`ext-link`} href={codeLink || projectLink} target="_blank"><h4 className={`${styles.textColor} ${!left && 'text-end'} fw-bold`}>{title}</h4></a>  
+            {codeLink && <a className={`ext-link`} href={codeLink}><FaGithub style={{color: styles.accentTextColor}} className="mx-2 "size={25}/></a>}  
+            
+            </div>  
             {props.children}
         </Col>
     </Row>

@@ -5,3 +5,15 @@
     pointer-events: none;
     z-index: -1;
   }
+  .blurred::after {
+    content: "";
+    position: absolute;
+    backdrop-filter: blur(2px); /* apply the blur */
+    pointer-events: none; /* make the overlay click-through */
+  }
+  
+  .blurred {
+    position: relative;
+    background: no-repeat center center;
+    background-size: cover;
+  }

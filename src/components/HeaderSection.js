@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa';
 
 export default function HeaderSection({theme, styles}) {
-  return <div className='mx-auto' style={{width:"95%", marginTop:100, marginBottom: 50}}>
+  return <div id="home" className='mx-auto' style={{width:"95%", marginTop:100, marginBottom: 50}}>
       <p className={`text-pink mono-font`}>
           Hello there, my name is
       </p>
