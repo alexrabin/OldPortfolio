@@ -43,7 +43,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
         >Experience</Link>
          <Link
         className={`px-2 ${styles.smallLinkStyle}`}
-        to="project"
+        to="projects"
         spy={true}
         smooth={true}
         offset={-70}

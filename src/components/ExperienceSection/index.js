@@ -4,7 +4,7 @@ import '../../styles/pills.css';
 import { Tab, Nav, Row, Col } from 'react-bootstrap';
 import WorkSection from './WorkSection';
 
-export default function Experience({theme, styles}) {
+export default function ExperienceSection({theme, styles}) {
   return <div id='experience' className='mx-auto' style={{width:"95%", marginTop:50}}>
     <div className="row justify-content-start align-items-center mb-4">
         <div className="col-md-6 col-lg-4">

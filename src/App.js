@@ -6,7 +6,8 @@ import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
 import HeaderSection from './components/HeaderSection';
 import ParticlesBg from 'particles-bg'
-import Experience from './components/ExperienceSection';
+import ExperienceSection from './components/ExperienceSection';
+import ProjectsSection from './components/ProjectsSection';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -75,7 +76,8 @@ function App() {
       <Container style={{zIndex: 1020, paddingBottom:50}}>
           <HeaderSection theme={theme} styles={styles}/>
           <AboutSection theme={theme} styles={styles}/>
-          <Experience theme={theme} styles={styles}/>
+          <ExperienceSection theme={theme} styles={styles}/>
+          <ProjectsSection theme={theme} styles={styles}/>
       </Container>
       </div>
     </div>
