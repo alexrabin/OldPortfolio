@@ -1,15 +1,15 @@
 import React from 'react';
 import Divider from '../Divider';
 import { Tab, Nav, Row, Col } from 'react-bootstrap';
-import './styles.css';
+import '../../styles/pills.css';
 
 export default function AboutSection({theme, styles}) {
   return <div id='about' className='mx-auto' style={{width:"95%", marginTop:50}}>
-    <div className="row justify-content-start align-items-center">
-      <div className="col-sm-6 col-md-4">
+    <div className="row justify-content-start align-items-center mb-4">
+      <div className="col-sm-6 col-md-4 col-lg-2">
         <h1 className={`${styles.textColor}`}>About Me</h1>
       </div>
-      <div className="col-sm-6 col-md-8">
+      <div className="col-sm-6 col-md-8 col-lg-10">
         <Divider styles={styles}/>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default function AboutSection({theme, styles}) {
       <Tab.Container id="techStackContainer" defaultActiveKey="mobile">
   <Row>
     <Col sm={3} className='mb-3'>
-      <Nav variant="pills" className="flex-column text-center">
+      <Nav variant="pills" className="flex-column text-sm-left text-md-center">
         <Nav.Item>
           <Nav.Link eventKey="mobile" className={theme === 'dark' ? 'dark' : 'light'}>Mobile</Nav.Link>
         </Nav.Item>

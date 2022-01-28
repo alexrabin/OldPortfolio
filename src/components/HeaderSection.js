@@ -7,7 +7,7 @@ export default function HeaderSection({theme, styles}) {
       </p>
       <h1 className={`${styles.textColor} big-header`}>Alex Rabin.</h1>
       <h1 className={`headline`} style={{color: styles.accentTextColor}}>Cool stuff technology expert</h1>
-      <p className={`${styles.textColor}`}>I'm a software developer specializing in mobile and web development. Currently, I'm focused on perfecting <a href="https://www.harkins.com" target="_blank" style={{color: 'var(--bs-pink', textDecoration:'none', zIndex:99999}}>Harkins Theatres'</a> mobile app and website. </p>
+      <p className={`${styles.textColor}`}>I'm a software developer specializing in mobile and web development. Currently, I'm focused on perfecting <a href="https://www.harkins.com" target="_blank" className='ext-link'>Harkins Theatres'</a> mobile app and website. </p>
 
   </div>;
 }

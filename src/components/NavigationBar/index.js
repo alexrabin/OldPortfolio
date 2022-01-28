@@ -16,7 +16,7 @@ import logo from '../../assets/largeicon.png'
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<div className={`navbar navbar-expanded-xl navbar-inner transparent `}>
+<div className={`navbar navbar-expanded-xl navbar-inner ${theme == 'dark' ? 'darked' : 'lighted'} sticky-top`}>
   <Container fluid>
   <Navbar.Brand href="#home"><img src={logo} height={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>

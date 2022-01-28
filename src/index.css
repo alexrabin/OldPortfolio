@@ -47,3 +47,7 @@ body{
 .dark-nav-link:hover{
   color: #EC4578
 }
+.ext-link{
+  color: var(--bs-pink);
+  text-decoration:none;
+}

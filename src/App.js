@@ -6,6 +6,7 @@ import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
 import HeaderSection from './components/HeaderSection';
 import ParticlesBg from 'particles-bg'
+import Experience from './components/ExperienceSection';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -56,24 +57,25 @@ function App() {
     <div className={`vh-100`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
   MozTransition: "all .5s ease"}}>
-    <ParticlesBg id="tsparticles" type="cobweb" color={[styles.accentTextColor]} bg={{
+    <ParticlesBg id="tsparticles" type="cobweb" color={'#EC4578'} bg={{
         position: 'absolute',
         width:' 100%',
         height: height,
         pointerEvents: 'none',
         zIndex: -1,
-        opacity: 0.8,
         display:'block',
         top: 0,
         left: 0,
         backgroundColor: styles.particleBgColor,
-        
+        filter: 'blur(2px)',
+        transform: 'scale(1.01)' 
       }} />
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container style={{zIndex: 1020, paddingBottom:50}}>
         <HeaderSection theme={theme} styles={styles}/>
         <AboutSection theme={theme} styles={styles}/>
+        <Experience theme={theme} styles={styles}/>
       </Container>
       </div>
     </div>
