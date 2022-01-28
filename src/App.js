@@ -1,10 +1,9 @@
 import './App.css';
 import useLocalStorage from 'use-local-storage'
-import {useCallback, useMemo} from 'react'
+import {useCallback, useMemo, useEffect, useState} from 'react'
 import { Container } from 'react-bootstrap';
 import AboutSection from './components/AboutSection';
 import NavigationBar from './components/NavigationBar';
-import Particles from "react-tsparticles";
 import HeaderSection from './components/HeaderSection';
 import ParticlesBg from 'particles-bg'
 
@@ -34,7 +33,25 @@ function App() {
 
   },[theme, setTheme])
 
+  const [height, setHeight] = useState(document.documentElement.scrollHeight);
+  
+  useEffect(() => {
+    const handleResize = (e) => {
 
+      setHeight(window.document.body.scrollHeight)
+      
+    }
+
+    window.addEventListener('resize', handleResize); // ideally you need to throttle this event
+
+    // fire on first render if needed
+    handleResize();
+
+    // cleanup this component
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
   return (
     
     <div className={`vh-100`} style={{transition: "all .5s ease",
@@ -43,94 +60,19 @@ function App() {
     <ParticlesBg id="tsparticles" type="cobweb" color={[styles.accentTextColor]} bg={{
         position: 'absolute',
         width:' 100%',
-        height: '100%',
+        height: height,
         pointerEvents: 'none',
         zIndex: -1,
         opacity: 0.8,
+        display:'block',
+        top: 0,
+        left: 0,
         backgroundColor: styles.particleBgColor,
         
       }} />
-      {/* <Particles
-        id="tsparticles"
-        options={{
-          background: {
-            color: {
-              value: styles.particleBgColor,
-            },
-          },
-          fpsLimit: 30,
-          fullScreen: {enabled: true},
-          interactivity: {
-            detectsOn: "canvas",
-            events: {
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.6,
-                size: 40,
-              },
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: styles.accentColor,
-            },
-            links: {
-              color: styles.accentTextColor,
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 900,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.6,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              random: true,
-              value: 2,
-            },
-          },
-          detectRetina: true,
-        }}
-      /> */}
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
-      <Container style={{zIndex: 1020}}>
+      <Container style={{zIndex: 1020, paddingBottom:50}}>
         <HeaderSection theme={theme} styles={styles}/>
         <AboutSection theme={theme} styles={styles}/>
       </Container>

@@ -6,16 +6,17 @@ import {
   Button,
   Form,
   Offcanvas,
-  CloseButton
+  CloseButton,
+  Col
 } from "react-bootstrap";
 import './styles.css';
 import { FaBars } from 'react-icons/fa';
 import logo from '../../assets/largeicon.png'
-
+//${theme == 'dark' ? 'dark' : 'light'}
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<Navbar className={theme == 'dark' ? 'dark' : 'light'}  collapseOnSelect expand="xl"  sticky="top" >
+<div className={`navbar navbar-expanded-xl navbar-inner transparent `}>
   <Container fluid>
   <Navbar.Brand href="#home"><img src={logo} height={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
@@ -70,7 +71,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
           <CloseButton variant={theme === "dark" ? "white" : null} onClick={() => setShowNavList(false)}/>
         </Offcanvas.Header>
       <Offcanvas.Body>
-        <Nav className="justify-content-center d-flex align-items-center">
+        <Col className="justify-content-center align-items-center text-center">
           
           <Nav.Link className={styles.medLinkStyle} href="#about">About</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
@@ -78,12 +79,12 @@ export default function NavigationBar({theme, switchTheme, styles}) {
           <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
           <Button className="w-50 med-text resume-button">Resume</Button>
           
-        </Nav>
+        </Col>
         
       </Offcanvas.Body>
     </Navbar.Offcanvas>
   </Container>
-</Navbar>
+</div>
 
   </>;
 }
