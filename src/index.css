@@ -36,6 +36,9 @@ body{
 .light-nav-link{
   color: #296EFD;
   font-family: 'Source Code Pro', monospace;
+  text-decoration: none;
+  list-style-type: none;
+
 }
 .light-nav-link:hover{
   color: #EC4578
@@ -43,6 +46,8 @@ body{
 .dark-nav-link{
   color: white;
   font-family: 'Source Code Pro', monospace;
+  text-decoration: none;
+  list-style-type: none;
 }
 .dark-nav-link:hover{
   color: #EC4578

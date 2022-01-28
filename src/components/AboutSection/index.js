@@ -31,7 +31,7 @@ export default function AboutSection({theme, styles}) {
       <Tab.Container id="techStackContainer" defaultActiveKey="mobile">
   <Row>
     <Col sm={3} className='mb-3'>
-      <Nav variant="pills" className="flex-column text-sm-left text-md-center">
+      <Nav variant="pills" className="flex-column text-left">
         <Nav.Item>
           <Nav.Link eventKey="mobile" className={theme === 'dark' ? 'dark' : 'light'}>Mobile</Nav.Link>
         </Nav.Item>

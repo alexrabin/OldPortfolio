@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+
 import {
   Navbar,
   Container,
@@ -12,24 +13,55 @@ import {
 import './styles.css';
 import { FaBars } from 'react-icons/fa';
 import logo from '../../assets/largeicon.png'
+import { Link} from "react-scroll";
+
 //${theme == 'dark' ? 'dark' : 'light'}
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
   return <>
-<div className={`navbar navbar-expanded-xl navbar-inner ${theme == 'dark' ? 'darked' : 'lighted'} sticky-top`}>
+<div className={`navbar navbar-expanded-xl navbar-inner ${theme === 'dark' ? 'darked' : 'lighted'} sticky-top`}>
   <Container fluid>
-  <Navbar.Brand href="#home"><img src={logo} height={32}/></Navbar.Brand>
+  <Navbar.Brand href="#home"><img alt="Alex Rabin Logo" src={logo} height={32}/></Navbar.Brand>
     <div className={`justify-content-around align-items-center ${styles.smallLinkStyle} d-none d-md-flex`}>
       
-        <Nav.Link className={styles.smallLinkStyle} href="#about">About</Nav.Link>
-        <Nav.Link className={styles.smallLinkStyle} href="#experience">Experience</Nav.Link>
-        <Nav.Link className={styles.smallLinkStyle} href="#projects">Projects</Nav.Link>
-        <Nav.Link className={styles.smallLinkStyle} href="#contact">Contact</Nav.Link>
-        <Button className="w-25 mx-auto resume-button">Resume</Button>
+        <Link
+        activeClass="active"
+        className={`px-2 ${styles.smallLinkStyle}`}
+        to="about"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        >About</Link>
+        <Link
+        className={`px-2 ${styles.smallLinkStyle}`}
+        to="experience"
+        spy={true}
+        smooth={true}
+        offset={-20}
+        duration={500}
+        >Experience</Link>
+         <Link
+        className={`px-2 ${styles.smallLinkStyle}`}
+        to="project"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        >Projects</Link>
+         <Link
+        className={`px-2 ${styles.smallLinkStyle}`}
+        to="contact"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        >Contact</Link>
+        <Button className="mx-1 w-25 resume-button">Resume</Button>
        <div className="switch-container">
        <Form.Check 
         type="switch"
-        className={`mx-3 ${theme === "dark" ? "dark-nav-link": "light-nav-link"}`}
+        className={`mx-2 ${theme === "dark" ? "dark-nav-link": "light-nav-link"}`}
         style={{width: 100, marginTop: 7}}
         checked={theme === "dark"}
           id="custom-switch"

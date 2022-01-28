@@ -73,9 +73,9 @@ function App() {
        <div > 
       <NavigationBar theme={theme} switchTheme={switchTheme} styles={styles}/>
       <Container style={{zIndex: 1020, paddingBottom:50}}>
-        <HeaderSection theme={theme} styles={styles}/>
-        <AboutSection theme={theme} styles={styles}/>
-        <Experience theme={theme} styles={styles}/>
+          <HeaderSection theme={theme} styles={styles}/>
+          <AboutSection theme={theme} styles={styles}/>
+          <Experience theme={theme} styles={styles}/>
       </Container>
       </div>
     </div>
