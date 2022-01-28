@@ -18,7 +18,7 @@ export default function AboutSection({theme, styles}) {
         Hi! My name is Alex and I enjoy creating helpful tools and apps for everyone to take advantage of.
       </p>
       <p className={`${styles.textColor}`}>
-       My programming journey started back in 2015 when a high school friend taught me the basics of iOS development using the programming language, Objective-C. Ever since then, I've been addicted to the thrill of solving problems for the digital world. 
+       My programming journey began in 2015, when a high school friend taught me the basics of iOS development. Ever since then, I've been addicted to the thrill of solving problems for the digital world. 
       </p>
       <p className={`${styles.textColor}`}>
       Fast forward to today, and I've had the privilege of working at two starts ups, interning at a financial corporation, and desiging websites for the little guy.
