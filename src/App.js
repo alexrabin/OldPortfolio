@@ -33,7 +33,7 @@ function App() {
 
   },[theme, setTheme])
 
-  const [height, setHeight] = useState(document.documentElement.scrollHeight);
+  const [height, setHeight] = useState(window.document.body.scrollHeight);
   
   useEffect(() => {
     const handleResize = (e) => {
@@ -42,9 +42,8 @@ function App() {
       
     }
 
-    window.addEventListener('resize', handleResize); // ideally you need to throttle this event
+    window.addEventListener('resize', handleResize);
 
-    // fire on first render if needed
     handleResize();
 
     // cleanup this component
