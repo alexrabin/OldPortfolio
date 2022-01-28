@@ -15,7 +15,7 @@ export default function ExperienceSection({theme, styles}) {
         </div>
     </div>
     <Tab.Container id="work-container" defaultActiveKey="harkins">
-  <Row>
+  <Row className='flex-sm-row-reverse'>
   <Col sm={4} className='mb-3'>
       <Nav variant="pills" className="flex-column text-left">
         <Nav.Item>
