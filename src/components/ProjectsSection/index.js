@@ -4,6 +4,7 @@ import Project from './Project';
 import letsdothisicon from '../../assets/letsdothisicon.png'
 import dragazon from '../../assets/dragazon.png'
 import blockrun from '../../assets/blockRunIcon.png'
+import { FaLock } from 'react-icons/fa';
 export default function ProjectsSection({theme, styles}) {
   return <div id='projects' className='mx-auto' style={{width:"95%", marginTop:50}}>
     <div className="row justify-content-start align-items-center mb-4">
@@ -23,11 +24,15 @@ export default function ProjectsSection({theme, styles}) {
             <p className='text-end' style={{color: styles.accentTextColor}}>A store for all your dragaon related needs! Dragazon is a MERN e-commerce application created by Lonnie Mitchell, Chris Garrison, and I. </p>
 
         </Project>
-        <Project left styles={styles} title={"Let's Do This"} imageLink={letsdothisicon}>
-            <p style={{color: styles.accentTextColor}}>Back in 2015, my friend, Jacob and I created our first iOS app called Let's Do This. The app was a car rampage game, where the user would have to dodge incoming cars and shoot those cars to stay alive. The user could collect coins and then save up those coins to buy different types of cars.</p>
+        <Project left styles={styles} title={"Password Generator"} codeLink={"https://github.com/alexrabin/password-generator"} projectLink="https://alexrabin.github.io/password-generator/" imageIcon={<FaLock size={80}/>} >
+            <p style={{color: styles.accentTextColor}}>A password generator built with React and Bootstrap. </p>
+
         </Project>
-        <Project left={false} styles={styles} title={"Block Run"} imageLink={blockrun}>
-            <p className='text-end' style={{color: styles.accentTextColor}}>Block Run was the second iOS app that Jacob and I made. The app was a game where the user tapped on the screen to jump over obstacles. The user gained points by jumping over as many obstacles as possible. </p>
+        <Project left={false} styles={styles} title={"Let's Do This"} imageLink={letsdothisicon}>
+            <p className='text-end' style={{color: styles.accentTextColor}}>Back in 2015, my friend, Jacob and I created our first iOS app called Let's Do This. The app was a car rampage game, where the user would have to dodge incoming cars and shoot those cars to stay alive. The user could collect coins and then save up those coins to buy different types of cars.</p>
+        </Project>
+        <Project left styles={styles} title={"Block Run"} imageLink={blockrun}>
+            <p style={{color: styles.accentTextColor}}>Block Run was the second iOS app that Jacob and I made. The app was a game where the user tapped on the screen to jump over obstacles. The user gained points by jumping over as many obstacles as possible. </p>
 
         </Project>
     </div>

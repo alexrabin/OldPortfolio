@@ -14,7 +14,7 @@ import './styles.css';
 import { FaBars } from 'react-icons/fa';
 import logo from '../../assets/largeicon.png'
 import { Link} from "react-scroll";
-
+import resumePdf from '../../assets/Alexander Rabin- Resume.pdf';
 //${theme == 'dark' ? 'dark' : 'light'}
 export default function NavigationBar({theme, switchTheme, styles}) {
   const [showNavList, setShowNavList] = useState(false);
@@ -38,7 +38,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
         to="experience"
         spy={true}
         smooth={true}
-        offset={-20}
+        offset={-70}
         duration={500}
         >Experience</Link>
          <Link
@@ -57,11 +57,11 @@ export default function NavigationBar({theme, switchTheme, styles}) {
         offset={-70}
         duration={500}
         >Contact</Link>
-        <Button className="mx-1 w-25 resume-button">Resume</Button>
+        <Button className="mx-1 w-25 regular-button" download="AlexanderRabin-Resume" target="_blank" href={resumePdf} >Resume</Button>
        <div className="switch-container">
        <Form.Check 
         type="switch"
-        className={`mx-2 ${theme === "dark" ? "dark-nav-link": "light-nav-link"}`}
+        className={`ml-2 ${theme === "dark" ? "dark-nav-link": "light-nav-link"}`}
         style={{width: 100, marginTop: 7}}
         checked={theme === "dark"}
           id="custom-switch"
@@ -109,7 +109,7 @@ export default function NavigationBar({theme, switchTheme, styles}) {
           <Nav.Link className={styles.medLinkStyle} href="#experience">Experience</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#projects">Projects</Nav.Link>
           <Nav.Link className={styles.medLinkStyle} href="#contact">Contact</Nav.Link>
-          <Button className="w-50 med-text resume-button">Resume</Button>
+          <Button className="w-50 med-text regular-button">Resume</Button>
           
         </Col>
         

@@ -56,3 +56,8 @@ body{
   color: var(--bs-pink);
   text-decoration:none;
 }
+.regular-button:hover{
+  background-color: var(--bs-pink) !important;
+  border-color: var(--bs-pink) !important;
+
+}

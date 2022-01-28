@@ -44,8 +44,3 @@
 .switch-container{
     padding: 0 5px;
 }
-.resume-button:hover{
-    background-color: var(--bs-pink) !important;
-    border-color: var(--bs-pink) !important;
-
-}
