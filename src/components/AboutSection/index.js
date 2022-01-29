@@ -15,7 +15,7 @@ export default function AboutSection({theme, styles}) {
     </div>
     <div id='aboutText'>
       <p className={`${styles.textColor}`}>
-        Hi! My name is Alex and I enjoy creating helpful tools and apps for everyone to take advantage of.
+        Hi! I'm Alex and I love creating helpful tools and apps for everyone to enjoy.
       </p>
       <p className={`${styles.textColor}`}>
        My programming journey began in 2015, when a high school friend taught me the basics of iOS development. Ever since then, I've been addicted to the thrill of solving problems for the digital world. 
