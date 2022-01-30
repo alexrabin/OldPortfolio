@@ -49,8 +49,10 @@ function App() {
 
     window.addEventListener('resize', handleResize);
 
-    handleResize();
+    setTimeout(() => {
+      handleResize();
 
+    }, 500);
     // cleanup this component
     return () => {
       window.removeEventListener('resize', handleResize);
