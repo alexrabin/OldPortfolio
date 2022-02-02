@@ -14,13 +14,13 @@ export default function AboutSection({theme, styles}) {
       </div>
     </div>
     <div id='aboutText'>
-      <p className={`${styles.textColor}`}>
+      <p className={`${styles.textColor} mono-font`}>
         Hi! I'm Alex and I love creating helpful tools and apps for everyone to enjoy.
       </p>
-      <p className={`${styles.textColor}`}>
+      <p className={`${styles.textColor} mono-font`}>
        My programming journey began in 2015, when a high school friend taught me the basics of iOS development. Ever since then, I've been addicted to the thrill of solving problems for the digital world. 
       </p>
-      <p className={`${styles.textColor}`}>
+      <p className={`${styles.textColor} mono-font`}>
       Fast forward to today, and I've had the privilege of working at two starts ups, interning at a financial corporation, and desiging websites for the little guy.
       </p>
     </div>
@@ -44,7 +44,7 @@ export default function AboutSection({theme, styles}) {
       </Nav>
     </Col>
     <Col sm={9}>
-      <Tab.Content>
+      <Tab.Content className='mono-font' >
         <Tab.Pane eventKey="mobile" className={`${styles.textColor}`}>
 
             <Row className='justify-content-center'>

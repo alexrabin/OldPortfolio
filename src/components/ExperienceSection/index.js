@@ -54,8 +54,8 @@ export default function ExperienceSection({theme, styles}) {
            
             
         <WorkSection title={'Head Full Stack Developer'} work={"Parrot Reports"} workLink={"https://www.linkedin.com/company/parrot-reports/about/"} dates={"July 2019 - January 2020"}>
-              <li>Made an app allowing veterinarians to make audiovisual reports for their clients</li>
-              <li>Created and maintained the mobile app, website, and server</li>
+              <li>Created a service allowing veterinarians to make audiovisual reports for their clients</li>
+              <li>Designed, implemented and  maintained the mobile app, website, and server</li>
               <li>The Full Stack: Flutter, Angular, and Firebase</li>
             </WorkSection>
         </Tab.Pane>

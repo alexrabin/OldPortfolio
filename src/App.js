@@ -82,7 +82,7 @@ function App() {
           <ExperienceSection theme={theme} styles={styles}/>
           <ProjectsSection theme={theme} styles={styles}/>
           <ContactSection styles={styles}/>
-          <footer className={`text-center mt-5`} style={{color: styles.accentTextColor}}>
+          <footer className={`text-center mt-5 mono-font`} style={{color: styles.accentTextColor}}>
           Alexander Rabin © {currentYear}
           </footer>
       </Container>
