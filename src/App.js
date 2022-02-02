@@ -34,13 +34,17 @@ function App() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
   
     setTheme(newTheme);
-
+    document.body.style.background = newTheme === 'dark' ? '#212529' : '#F4F7FA';
 
   },[theme, setTheme])
 
   const [height, setHeight] = useState("100%");
   
   useEffect(() => {
+    const isDark = theme === "dark";
+
+    document.body.style.background = isDark ? '#212529' : '#F4F7FA';
+
     const handleResize = (e) => {
 
       setHeight(window.document.body.scrollHeight)
