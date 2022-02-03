@@ -66,7 +66,8 @@ function App() {
     
     <div className={`vh-100`} style={{transition: "all .5s ease",
   WebkitTransition: "all .5s ease",
-  MozTransition: "all .5s ease"}}>
+  MozTransition: "all .5s ease", paddingLeft: "env(safe-area-inset-left)",
+  paddingRight: "env(safe-area-inset-right)"}}>
     <ParticlesBg id="tsparticles" className="blurred" type="cobweb" color={'#EC4578'} bg={{
         position: 'absolute',
         width:' 100%',
