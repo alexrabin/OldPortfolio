@@ -21,7 +21,7 @@ export default function AboutSection({theme, styles}) {
        My programming journey began in 2015, when a high school friend taught me the basics of iOS development. Ever since then, I've been addicted to the thrill of solving problems for the digital world. 
       </p>
       <p className={`${styles.textColor} mono-font`}>
-      Fast forward to today, and I've had the privilege of working at two starts ups, interning at a financial corporation, and desiging websites for the little guy.
+      Fast forward to today, and I've had the privilege of working at two starts ups, interning at a financial corporation, and designing websites for the little guy.
       </p>
     </div>
     <div id='techStack' className='mb-5'>

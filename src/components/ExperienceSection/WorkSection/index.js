@@ -1,7 +1,8 @@
 import React from "react";
+import Divider from "../../Divider";
 
 export default function WorkSection(props) {
-  const { title, titles, work, workLink, dates } = props;
+  const { title, titles, work, workLink, dates, styles } = props;
   return (
     <div>
       {title && (
@@ -24,6 +25,7 @@ export default function WorkSection(props) {
               <div key={key}>
                 <h4>{data.title}</h4>
                 <p className="mono-font mb-1">{data.date}</p>
+                <Divider styles={styles} height={"2px"}/>
               </div>
             );
           })}

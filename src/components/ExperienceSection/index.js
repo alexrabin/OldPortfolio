@@ -73,6 +73,7 @@ export default function ExperienceSection({ theme, styles }) {
                   ]}
                   work={"Harkins Theatres"}
                   workLink={"https://www.harkins.com"}
+                  styles={styles}
                 >
                   <li>
                     Write modern, beautiful, and maintainable code for several
@@ -80,8 +81,8 @@ export default function ExperienceSection({ theme, styles }) {
                   </li>
                   <li>
                     Work with a variety of different languages, platforms, and
-                    frameworks such as JavaScript, TypeScript, React, React
-                    Native, Bootstrap, Styled Components, and Chakra UI{" "}
+                    frameworks such as JavaScript, TypeScript, React, Next.js, React
+                    Native, Bootstrap, Styled Components, and Chakra UI
                   </li>
                   <li>
                     Communicate with a team of developers, business system
