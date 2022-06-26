@@ -1,9 +1,0 @@
-export {default as CoolFaceIcon} from './CoolFaceIcon';
-export {default as CrazyFaceIcon} from './CrazyFaceIcon';
-export {default as NerdFaceIcon} from './NerdFaceIcon';
-export {default as SillyFaceIcon} from './SillyFaceIcon';
-export {default as ThinkingFaceIcon} from './ThinkingFaceIcon';
-export {default as WinkFaceIcon} from './WinkFaceIcon';
-export {default as SmirkFaceIcon} from './SmirkFaceIcon'
-export {default as SquintTongueFace} from './SquintTongueFaceIcon'
-export {default as DevilFaceIcon} from './DevilFaceIcon'
