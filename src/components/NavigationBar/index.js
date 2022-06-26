@@ -63,6 +63,12 @@ export default function NavigationBar({ theme, switchTheme, styles }) {
             </span>
             <span
               className={`px-2 ${styles.smallLinkStyle}`}
+              onClick={() => scrollToElement("testimonials")}
+            >
+              Testimonials
+            </span>
+            <span
+              className={`px-2 ${styles.smallLinkStyle}`}
               onClick={() => scrollToElement("contact")}
             >
               Contact
@@ -107,63 +113,70 @@ export default function NavigationBar({ theme, switchTheme, styles }) {
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="end"
-            className={styles.bgColor}
             show={showNavList}
             onHide={() => setShowNavList(false)}
           >
-            <Offcanvas.Header>
-              <div className="switch-container">
-                <Form.Check
-                  type="switch"
-                  className={[styles.medLinkStyle, "mx-3"]}
-                  style={{ width: 70, marginTop: 6 }}
-                  checked={theme === "dark"}
-                  id="custom-switch"
-                  onChange={switchTheme}
-                  label={theme === "dark" ? "Dark" : "Light"}
+            <div className={styles.bgColor} style={{ height: "100%" }}>
+              <Offcanvas.Header>
+                <div className="switch-container">
+                  <Form.Check
+                    type="switch"
+                    className={[styles.medLinkStyle, "mx-3"]}
+                    style={{ width: 70, marginTop: 6 }}
+                    checked={theme === "dark"}
+                    id="custom-switch"
+                    onChange={switchTheme}
+                    label={theme === "dark" ? "Dark" : "Light"}
+                  />
+                </div>
+                <CloseButton
+                  variant={theme === "dark" ? "white" : null}
+                  onClick={() => setShowNavList(false)}
                 />
-              </div>
-              <CloseButton
-                variant={theme === "dark" ? "white" : null}
-                onClick={() => setShowNavList(false)}
-              />
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Col className="justify-content-center align-items-center text-center">
-                <Nav.Link
-                  className={styles.medLinkStyle}
-                  onClick={() => scrollToElement("about")}
-                >
-                  About
-                </Nav.Link>
-                <Nav.Link
-                  className={styles.medLinkStyle}
-                  onClick={() => scrollToElement("experience")}
-                >
-                  Experience
-                </Nav.Link>
-                <Nav.Link
-                  className={styles.medLinkStyle}
-                  onClick={() => scrollToElement("projects")}
-                >
-                  Projects
-                </Nav.Link>
-                <Nav.Link
-                  className={styles.medLinkStyle}
-                  onClick={() => scrollToElement("contact")}
-                >
-                  Contact
-                </Nav.Link>
-                <Button
-                  className="w-50 med-text regular-button"
-                  download="AlexanderRabin-Resume"
-                  target="_blank"
-                  href={resumePdf}
-                >
-                  Resume
-                </Button>
-              </Col>
-            </Offcanvas.Body>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Col className="justify-content-center align-items-center text-center">
+                  <Nav.Link
+                    className={styles.medLinkStyle}
+                    onClick={() => scrollToElement("about")}
+                  >
+                    About
+                  </Nav.Link>
+                  <Nav.Link
+                    className={styles.medLinkStyle}
+                    onClick={() => scrollToElement("experience")}
+                  >
+                    Experience
+                  </Nav.Link>
+                  <Nav.Link
+                    className={styles.medLinkStyle}
+                    onClick={() => scrollToElement("projects")}
+                  >
+                    Projects
+                  </Nav.Link>
+                  <Nav.Link
+                    className={styles.medLinkStyle}
+                    onClick={() => scrollToElement("testimonials")}
+                  >
+                    Testimonials
+                  </Nav.Link>
+                  <Nav.Link
+                    className={styles.medLinkStyle}
+                    onClick={() => scrollToElement("contact")}
+                  >
+                    Contact
+                  </Nav.Link>
+                  <Button
+                    className="w-50 med-text regular-button"
+                    download="AlexanderRabin-Resume"
+                    target="_blank"
+                    href={resumePdf}
+                  >
+                    Resume
+                  </Button>
+                </Col>
+              </Offcanvas.Body>
+            </div>
           </Navbar.Offcanvas>
         </Container>
       </div>
