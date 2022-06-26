@@ -33,7 +33,7 @@ function App() {
       medLinkStyle: `med-text mono-font ${
         isDark ? "dark-nav-link" : "light-nav-link"
       }`,
-      particleBgColor: isDark ? "#212529" : "#F4F7FA",
+      particleBgColor: isDark ? "#0C0D0E" : "#F4F7FA",
     };
   }, [theme]);
 
@@ -42,7 +42,7 @@ function App() {
 
     setTheme(newTheme);
     document.body.style.background =
-      newTheme === "dark" ? "#212529" : "#F4F7FA";
+      newTheme === "dark" ? "#0C0D0E" : "#F4F7FA";
   }, [theme, setTheme]);
 
   const [height, setHeight] = useState("100%");
@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     const isDark = theme === "dark";
 
-    document.body.style.background = isDark ? "#212529" : "#F4F7FA";
+    document.body.style.background = isDark ? "#0C0D0E" : "#F4F7FA";
 
     const handleResize = (e) => {
       setHeight(window.document.body.scrollHeight);
