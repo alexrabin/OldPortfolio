@@ -8,7 +8,7 @@ export default function WorkSection(props) {
       {title && (
         <h4>
           {title}{" "}
-          <a href={workLink} target="_blank" className="ext-link">
+          <a href={workLink} target="_blank" className="ext-link" rel="noreferrer">
             @ {work}
           </a>
         </h4>
@@ -16,7 +16,7 @@ export default function WorkSection(props) {
       {titles && (
         <div>
           <h4>
-            <a href={workLink} target="_blank" className="ext-link">
+            <a href={workLink} target="_blank" className="ext-link" rel="noreferrer">
               {work}
             </a>
           </h4>

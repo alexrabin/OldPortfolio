@@ -15,6 +15,7 @@ const currentYear = new Date().getFullYear();
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [showBackground, setShowBackground] = useState(false);
   const [theme, setTheme] = useLocalStorage(
     "theme",
     defaultDark ? "dark" : "light"
@@ -53,6 +54,7 @@ function App() {
 
     const handleResize = (e) => {
       setHeight(window.document.body.scrollHeight);
+      setShowBackground(true);
     };
 
     window.addEventListener("resize", handleResize);
@@ -76,23 +78,25 @@ function App() {
         paddingRight: "env(safe-area-inset-right)",
       }}
     >
-      <ParticlesBg
-        id="tsparticles"
-        className="blurred"
-        type="cobweb"
-        color={"#EC4578"}
-        bg={{
-          position: "absolute",
-          width: " 100%",
-          height: height,
-          pointerEvents: "none",
-          zIndex: -1,
-          display: "block",
-          top: 0,
-          left: 0,
-          backgroundColor: styles.particleBgColor,
-        }}
-      />
+      {showBackground && (
+        <ParticlesBg
+          id="tsparticles"
+          className="blurred"
+          type="cobweb"
+          color={"#EC4578"}
+          bg={{
+            position: "absolute",
+            width: " 100%",
+            height: height,
+            pointerEvents: "none",
+            zIndex: -1,
+            display: "block",
+            top: 0,
+            left: 0,
+            backgroundColor: styles.particleBgColor,
+          }}
+        />
+      )}
       <div>
         <NavigationBar
           theme={theme}
