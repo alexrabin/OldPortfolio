@@ -9,7 +9,7 @@ import ParticlesBg from "particles-bg";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import { TestimonialsSection } from "./components/TestimonialsSection";
+import TestimonialsSection from "./components/TestimonialsSection";
 
 const currentYear = new Date().getFullYear();
 
