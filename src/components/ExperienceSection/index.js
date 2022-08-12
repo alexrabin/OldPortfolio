@@ -77,16 +77,16 @@ export default function ExperienceSection({ theme, styles }) {
                 >
                   <li>
                     Write modern, beautiful, and maintainable code for several
-                    internal projects
+                    internal projects.
                   </li>
                   <li>
                     Work with a variety of different languages, platforms, and
                     frameworks such as JavaScript, TypeScript, React, Next.js, React
-                    Native, Bootstrap, Styled Components, and Chakra UI
+                    Native, Styled Components, C#, .NET, and SQL.
                   </li>
                   <li>
                     Communicate with a team of developers, business system
-                    analysts, and project managers on a daily basis
+                    analysts, and project managers on a daily basis.
                   </li>
                 </WorkSection>
               </Tab.Pane>
@@ -99,9 +99,9 @@ export default function ExperienceSection({ theme, styles }) {
                 >
                   <li>
                     Worked on a small team to build a dashboard website to show
-                    all customer's financial transactions
+                    all customer's financial transactions.
                   </li>
-                  <li>Programmed in JavaScript, React, and Python </li>
+                  <li>Programmed in JavaScript, React, and Python. </li>
                 </WorkSection>
               </Tab.Pane>
               <Tab.Pane
@@ -118,13 +118,13 @@ export default function ExperienceSection({ theme, styles }) {
                 >
                   <li>
                     Created a service allowing veterinarians to make audiovisual
-                    reports for their clients
+                    reports for their clients.
                   </li>
                   <li>
                     Designed, implemented and maintained the mobile app,
-                    website, and server
+                    website, and server.
                   </li>
-                  <li>The Full Stack: Flutter, Angular, and Firebase</li>
+                  <li>The Full Stack: Flutter, Angular, and Firebase.</li>
                 </WorkSection>
               </Tab.Pane>
               <Tab.Pane eventKey="persokey" className={`${styles.textColor}`}>
@@ -136,9 +136,9 @@ export default function ExperienceSection({ theme, styles }) {
                 >
                   <li>
                     Worked closely with the CTO to design and implement a
-                    personal identification platform
+                    personal identification platform.
                   </li>
-                  <li>Created multiple iOS apps connecting to AWS Lambda</li>
+                  <li>Created multiple iOS apps connecting to AWS Lambda.</li>
                 </WorkSection>
               </Tab.Pane>
             </Tab.Content>
