@@ -3,7 +3,6 @@ import Divider from "../Divider";
 import Project from "./Project";
 import letsdothisicon from "../../assets/letsdothisicon.png";
 import dragazon from "../../assets/dragazon.png";
-import blockrun from "../../assets/blockRunIcon.png";
 import { FaLock } from "react-icons/fa";
 export default function ProjectsSection({ theme, styles }) {
   return (
@@ -21,8 +20,20 @@ export default function ProjectsSection({ theme, styles }) {
         </div>
       </div>
       <div id="the-projects">
-        <Project
+      <Project
           left
+          styles={styles}
+          title={"Happy Paws"}
+          codeLink={"https://github.com/alexrabin/HappyPaws"}
+          projectLink="https://happypaws.vercel.app"
+          imageLink="https://happypaws.vercel.app/apple-touch-icon.png"
+        >
+          <p style={{ color: styles.accentTextColor }} className="mono-font">
+          Your home for all your happy paws :) Uses Next.js and The Dog API.
+          </p>
+        </Project>
+        <Project
+          left={false}
           styles={styles}
           title={"native_drag_n_drop"}
           codeLink={"https://github.com/alexrabin/FlutterNativeDragAndDrop"}
@@ -35,7 +46,7 @@ export default function ProjectsSection({ theme, styles }) {
           </p>
         </Project>
         <Project
-          left={false}
+          left
           styles={styles}
           title={"Dragazon"}
           codeLink={"https://github.com/alexrabin/dragazon/tree/testing"}
@@ -52,7 +63,7 @@ export default function ProjectsSection({ theme, styles }) {
           </p>
         </Project>
         <Project
-          left
+          left={false}
           styles={styles}
           title={"Password Generator"}
           codeLink={"https://github.com/alexrabin/password-generator"}
@@ -64,7 +75,7 @@ export default function ProjectsSection({ theme, styles }) {
           </p>
         </Project>
         <Project
-          left={false}
+          left
           styles={styles}
           title={"Let's Do This"}
           imageLink={letsdothisicon}
@@ -78,14 +89,6 @@ export default function ProjectsSection({ theme, styles }) {
             would have to dodge incoming cars and shoot those cars to stay
             alive. The user could collect coins and then save up those coins to
             buy different types of cars.
-          </p>
-        </Project>
-        <Project left styles={styles} title={"Block Run"} imageLink={blockrun}>
-          <p style={{ color: styles.accentTextColor }} className="mono-font">
-            Block Run was the second iOS app that Jacob and I made. The app was
-            a game where the user tapped on the screen to jump over obstacles.
-            The user gained points by jumping over as many obstacles as
-            possible.{" "}
           </p>
         </Project>
       </div>
