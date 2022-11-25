@@ -28,8 +28,7 @@ const projects = [
   },
   {
     title: 'Dragazon',
-    codeLink: 'https://github.com/alexrabin/dragazon/tree/testing',
-    projectLink: 'https://dragazon.herokuapp.com',
+    codeLink: 'https://github.com/alexrabin/dragazon',
     imageLink: dragazon,
     description:' A store for all your dragon related needs! Dragazon is a MERN  e-commerce application created by Lonnie Mitchell, Chris Garrison, and I.'
   },
