@@ -58,6 +58,7 @@ export default function ProjectsSection({ styles }) {
       <div id="the-projects">
         {projects.map((project, i) => {
           return <Project
+          key={i}
           left={i % 2 === 0}
           styles={styles}
           title={project.title}

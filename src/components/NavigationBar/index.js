@@ -31,6 +31,12 @@ export default function NavigationBar({ theme, switchTheme, styles }) {
           theme === "dark" ? "darked" : "lighted"
         } sticky-top`}
       >
+        <Container fluid className="d-flex justify-content-center align-items-center">
+          <p className={`mono-font mb-1 text-center ${styles.textColor}`} style={{fontSize: '0.75rem'}}>
+          This is my previous portfolio. Click<a href={'https://alexrabin.com'} className="ext-link"> here </a>to see my updated portfolio.
+          </p>
+          
+        </Container>
         <Container fluid>
           <Navbar.Brand>
             <span
