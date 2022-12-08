@@ -8,15 +8,15 @@ const projects = [
   {
     title: 'Rickest Rick',
     codeLink: 'https://github.com/alexrabin/RickestRick',
-    projectLink: 'https://rickest-rick.vercel.app',
-    imageLink: 'https://rickest-rick.vercel.app/apple-touch-icon.png',
+    projectLink: 'https://rickest-rick.netlify.app',
+    imageLink: "https://raw.githubusercontent.com/alexrabin/RickestRick/main/public/apple-touch-icon.png",
     description: "View Characters, Episodes, and Locations from the TV show, Rick & Morty. Uses Next.js, MUI, & the Rick & Morty API."
   },
   {
     title: 'Happy Paws',
     codeLink: 'https://github.com/alexrabin/HappyPaws',
-    projectLink: 'https://happypaws.vercel.app',
-    imageLink: 'https://happypaws.vercel.app/apple-touch-icon.png',
+    projectLink: 'https://thehappypaws.netlify.app',
+    imageLink: 'https://raw.githubusercontent.com/alexrabin/HappyPaws/main/public/apple-touch-icon.png',
     description: 'Your home for all your happy paws :) Uses Next.js and The Dog API.'
   },
   {
